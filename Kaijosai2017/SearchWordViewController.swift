@@ -10,8 +10,11 @@ import UIKit
 
 class SearchWordViewController: UIViewController {
 
+    @IBOutlet weak var setabWord: UITabBarItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Do any additional setup after loading the view.
     }

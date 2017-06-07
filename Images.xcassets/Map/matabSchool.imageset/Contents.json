@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "setabMap1.png",
+      "filename" : "matabSchool1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "setabMap2.png",
+      "filename" : "matabSchool2.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "setabMap3.png",
+      "filename" : "matabSchool3.png",
       "scale" : "3x"
     }
   ],
