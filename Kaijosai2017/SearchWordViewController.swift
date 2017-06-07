@@ -8,16 +8,17 @@
 
 import UIKit
 
-class SearchWordViewController: UIViewController {
+class SearchWordViewController: UIViewController{
+    
+    @IBOutlet weak var seResultTable: UITableView!
 
-    @IBOutlet weak var setabWord: UITabBarItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
         // Do any additional setup after loading the view.
     }
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

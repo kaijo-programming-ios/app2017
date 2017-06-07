@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D7EB48C1EE837C200582BB5 /* DataListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7EB48B1EE837C200582BB5 /* DataListTableViewController.swift */; };
 		4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */; };
 		4DAEF2AA1EE6CA7B00AC9187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */; };
 		4DAEF2AD1EE6CA7B00AC9187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		4DAEF2B51EE6CA7B00AC9187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAEF2B31EE6CA7B00AC9187 /* LaunchScreen.storyboard */; };
 		4DAEF2C01EE6CA7B00AC9187 /* Kaijosai2017Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2BF1EE6CA7B00AC9187 /* Kaijosai2017Tests.swift */; };
 		4DAEF2CB1EE6CA7B00AC9187 /* Kaijosai2017UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2CA1EE6CA7B00AC9187 /* Kaijosai2017UITests.swift */; };
-		4DAEF2DF1EE6D26400AC9187 /* SearchWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2DE1EE6D26400AC9187 /* SearchWordViewController.swift */; };
 		4DAEF2E11EE6D33E00AC9187 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAEF2E01EE6D33E00AC9187 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D7EB48B1EE837C200582BB5 /* DataListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListTableViewController.swift; sourceTree = "<group>"; };
 		4DAEF2A41EE6CA7B00AC9187 /* Kaijosai2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaijosai2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		4DAEF2C61EE6CA7B00AC9187 /* Kaijosai2017UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Kaijosai2017UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAEF2CA1EE6CA7B00AC9187 /* Kaijosai2017UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaijosai2017UITests.swift; sourceTree = "<group>"; };
 		4DAEF2CC1EE6CA7B00AC9187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DAEF2DE1EE6D26400AC9187 /* SearchWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchWordViewController.swift; sourceTree = "<group>"; };
 		4DAEF2E01EE6D33E00AC9187 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,8 +104,8 @@
 			children = (
 				4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */,
 				4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */,
-				4DAEF2DE1EE6D26400AC9187 /* SearchWordViewController.swift */,
 				4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */,
+				4D7EB48B1EE837C200582BB5 /* DataListTableViewController.swift */,
 				4DAEF2B31EE6CA7B00AC9187 /* LaunchScreen.storyboard */,
 				4DAEF2B61EE6CA7B00AC9187 /* Info.plist */,
 				4DAEF2AE1EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld */,
@@ -267,8 +267,8 @@
 			files = (
 				4DAEF2AA1EE6CA7B00AC9187 /* ViewController.swift in Sources */,
 				4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */,
-				4DAEF2DF1EE6D26400AC9187 /* SearchWordViewController.swift in Sources */,
 				4DAEF2B01EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld in Sources */,
+				4D7EB48C1EE837C200582BB5 /* DataListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +515,7 @@
 				4DAEF2D11EE6CA7B00AC9187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DAEF2D21EE6CA7B00AC9187 /* Build configuration list for PBXNativeTarget "Kaijosai2017Tests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +524,7 @@
 				4DAEF2D41EE6CA7B00AC9187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4DAEF2D51EE6CA7B00AC9187 /* Build configuration list for PBXNativeTarget "Kaijosai2017UITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +533,7 @@
 				4DAEF2D71EE6CA7B00AC9187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
