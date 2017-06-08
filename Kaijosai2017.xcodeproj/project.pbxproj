@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D7EB48C1EE837C200582BB5 /* DataListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D7EB48B1EE837C200582BB5 /* DataListTableViewController.swift */; };
+		4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5718721EE97013003B95D4 /* SeResultViewController.swift */; };
 		4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */; };
 		4DAEF2AA1EE6CA7B00AC9187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */; };
 		4DAEF2AD1EE6CA7B00AC9187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */; };
@@ -36,7 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4D7EB48B1EE837C200582BB5 /* DataListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataListTableViewController.swift; sourceTree = "<group>"; };
+		4D5718721EE97013003B95D4 /* SeResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeResultViewController.swift; sourceTree = "<group>"; };
 		4DAEF2A41EE6CA7B00AC9187 /* Kaijosai2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaijosai2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,7 +105,7 @@
 				4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */,
 				4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */,
 				4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */,
-				4D7EB48B1EE837C200582BB5 /* DataListTableViewController.swift */,
+				4D5718721EE97013003B95D4 /* SeResultViewController.swift */,
 				4DAEF2B31EE6CA7B00AC9187 /* LaunchScreen.storyboard */,
 				4DAEF2B61EE6CA7B00AC9187 /* Info.plist */,
 				4DAEF2AE1EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld */,
@@ -266,9 +266,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DAEF2AA1EE6CA7B00AC9187 /* ViewController.swift in Sources */,
+				4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */,
 				4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */,
 				4DAEF2B01EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld in Sources */,
-				4D7EB48C1EE837C200582BB5 /* DataListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
