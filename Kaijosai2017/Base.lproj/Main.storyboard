@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hss-BG-bRl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hss-BG-bRl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -249,7 +249,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9lI-g5-F0E">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="table" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9lI-g5-F0E">
                                 <rect key="frame" x="10" y="207" width="355" height="403"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -257,7 +257,7 @@
                                         <rect key="frame" x="0.0" y="28" width="355" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Uvo-Qe-7eV" id="xPq-aC-JSo">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="54.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJI-MQ-ON1">
@@ -299,38 +299,30 @@
                                     <segment title="カテゴリーから"/>
                                 </segments>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="検索ワード..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lwB-Lq-klp">
-                                <rect key="frame" x="21" y="152" width="283" height="30"/>
+                            <searchBar contentMode="redraw" placeholder="キーワードを入力..." translatesAutoresizingMaskIntoConstraints="NO" id="i7e-yi-8QO">
+                                <rect key="frame" x="21" y="148" width="333" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="cHm-eb-uuU"/>
+                                    <constraint firstAttribute="height" constant="44" id="HGi-Q3-i0z"/>
                                 </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FCX-Jg-Dgl">
-                                <rect key="frame" x="322" y="152" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="FCX-Jg-Dgl" secondAttribute="height" multiplier="1:1" id="Y2D-JQ-t4H"/>
-                                </constraints>
-                                <state key="normal" image="seSebutton"/>
-                            </button>
+                                <connections>
+                                    <outlet property="delegate" destination="bWF-9v-YJg" id="IfL-UA-Blb"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="9lI-g5-F0E" firstAttribute="top" secondItem="FCX-Jg-Dgl" secondAttribute="bottom" constant="23" id="Eqy-Dh-WaS"/>
-                            <constraint firstItem="lwB-Lq-klp" firstAttribute="top" secondItem="QZm-3H-JId" secondAttribute="bottom" constant="18" id="ILi-Z4-0Kh"/>
+                            <constraint firstItem="i7e-yi-8QO" firstAttribute="centerX" secondItem="YZa-hO-r9e" secondAttribute="centerX" id="0K9-is-3IM"/>
                             <constraint firstItem="9lI-g5-F0E" firstAttribute="leading" secondItem="YZa-hO-r9e" secondAttribute="leading" constant="10" id="KYu-GT-NM8"/>
-                            <constraint firstItem="FCX-Jg-Dgl" firstAttribute="leading" secondItem="lwB-Lq-klp" secondAttribute="trailing" constant="18" id="SzJ-Y5-wmI"/>
+                            <constraint firstItem="i7e-yi-8QO" firstAttribute="top" secondItem="QZm-3H-JId" secondAttribute="bottom" constant="14" id="PMI-ve-leN"/>
                             <constraint firstItem="QZm-3H-JId" firstAttribute="centerX" secondItem="YZa-hO-r9e" secondAttribute="centerX" id="TyW-B8-Ef4"/>
                             <constraint firstAttribute="trailing" secondItem="9lI-g5-F0E" secondAttribute="trailing" constant="10" id="VDV-LJ-z66"/>
                             <constraint firstItem="nOk-8v-67D" firstAttribute="top" secondItem="9lI-g5-F0E" secondAttribute="bottom" constant="8" id="YG2-Z3-7bt"/>
-                            <constraint firstItem="lwB-Lq-klp" firstAttribute="leading" secondItem="YZa-hO-r9e" secondAttribute="leadingMargin" constant="5" id="ai3-cq-zxx"/>
                             <constraint firstItem="QZm-3H-JId" firstAttribute="top" secondItem="I1u-tr-alX" secondAttribute="bottom" constant="35" id="jPh-pC-c6R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="i7e-yi-8QO" secondAttribute="trailing" constant="5" id="oIN-5n-7fy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QZm-3H-JId" secondAttribute="trailing" constant="5" id="oJx-Pt-pdf"/>
                             <constraint firstItem="9lI-g5-F0E" firstAttribute="centerX" secondItem="YZa-hO-r9e" secondAttribute="centerX" id="qoe-Ip-Gh2"/>
-                            <constraint firstItem="FCX-Jg-Dgl" firstAttribute="top" secondItem="QZm-3H-JId" secondAttribute="bottom" constant="18" id="tYJ-y8-aYd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FCX-Jg-Dgl" secondAttribute="trailing" constant="5" id="wpm-V4-wcl"/>
+                            <constraint firstItem="i7e-yi-8QO" firstAttribute="leading" secondItem="YZa-hO-r9e" secondAttribute="leadingMargin" constant="5" id="rG0-Ju-K1M"/>
                             <constraint firstItem="QZm-3H-JId" firstAttribute="leading" secondItem="YZa-hO-r9e" secondAttribute="leadingMargin" constant="5" id="xE1-my-iEA"/>
                         </constraints>
                     </view>
@@ -338,12 +330,13 @@
                         <barButtonItem key="rightBarButtonItem" image="naviMenu" id="jiQ-98-Abq"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="table" destination="9lI-g5-F0E" id="6o9-mw-DbK"/>
+                        <outlet property="keywordSearchBar" destination="i7e-yi-8QO" id="pWE-ca-aAD"/>
+                        <outlet property="table" destination="9lI-g5-F0E" id="3AE-7n-3CQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGJ-9S-TRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3652" y="-223.53823088455775"/>
+            <point key="canvasLocation" x="3652" y="-223"/>
         </scene>
         <!--場所から検索-->
         <scene sceneID="Icq-8K-Ufa">
@@ -410,7 +403,6 @@
         <image name="matabSchool" width="24" height="24"/>
         <image name="metabAccess" width="24" height="24"/>
         <image name="naviMenu" width="24" height="24"/>
-        <image name="seSebutton" width="32" height="32"/>
         <image name="setabMap" width="24" height="24"/>
         <image name="setabWord" width="24" height="24"/>
     </resources>
