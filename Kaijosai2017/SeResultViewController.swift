@@ -9,7 +9,7 @@
 import UIKit
 
 class SeResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
-
+    
     
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var keywordSearchBar: UISearchBar!
@@ -19,21 +19,16 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
     let eventArray = ["海城説明会","校内案内","ハーイ！ナビターイム！","ご注文はこの企画ですか？","The 鉄研","中高生が全力で〇〇やって見た！"]
     let organArray = ["海原会","文実ツアー部","高１有志","2年4組","鉄道研究部","出版部"]
     
-<<<<<<< HEAD
     // 検索結果の配列
     var searchResult1 = [String]()
     var searchResult2 = [String]()
     var searchResult3 = [String]()
-=======
-    let imgArray: NSArray = ["kaijopic","mappic","navipic","searchpic","trainpic","wordpic"]
     var dataList:[String] = []
->>>>>>> master
     
     // 初期化処理
     override func viewDidLoad() {
         super.viewDidLoad()
         
-<<<<<<< HEAD
         // デリゲート先の設定
         self.table.delegate = self
         self.table.dataSource = self
@@ -46,7 +41,6 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         searchResult1 = imgArray
         searchResult2 = eventArray
         searchResult3 = organArray
-=======
         do {
             //CSVファイルのパス名を取得
             let csvPath = Bundle.main.path(forResource: "eventData", ofType: "csv")
@@ -57,18 +51,6 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         } catch {
             print(error)
         }
-        
->>>>>>> master
-    }
-    
-    // セクションの数を返す
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return searchResult2.count
-    }
-    
-    // テーブルに表示する配列の総数を返す
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResult2.count
     }
     
     // Cellに値を設定する
@@ -76,13 +58,9 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // インスタンス生成
         let cell = table.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
-<<<<<<< HEAD
-        let img = UIImage(named:"\(searchResult1[indexPath.row])")
-=======
         let img = UIImage(named:"\(imgArray[indexPath.row])")
         //カンマ区切りでデータを分裂し、配列に格納
         let dataDetail = dataList[indexPath.row].components(separatedBy: ",")
->>>>>>> master
         
         // Tag1生成
         let imageView = table.viewWithTag(1) as! UIImageView
@@ -90,23 +68,28 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Tag2生成
         let label1 = table.viewWithTag(2) as! UILabel
-<<<<<<< HEAD
         label1.text = "\(searchResult2[indexPath.row])"
-=======
         label1.text = dataDetail[1]
->>>>>>> master
         
         // Tag3の生成
         let label2 = table.viewWithTag(3) as! UILabel
-<<<<<<< HEAD
         label2.text = "\(searchResult3[indexPath.row])"
-=======
         label2.text = dataDetail[2]
->>>>>>> master
         
         return cell
     }
     
+    // テーブルに表示する配列の総数を返す
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return searchResult2.count
+    }
+    
+    // ?
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return searchResult2.count
+    }
+    
+    // ?
     override func viewWillAppear(_ animated: Bool) {
         self.table.reloadData()
         super.viewWillAppear(animated)
@@ -149,13 +132,13 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
