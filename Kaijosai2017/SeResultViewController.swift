@@ -13,13 +13,22 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var table: UITableView!
     
     let imgArray: NSArray = ["kaijopic","mappic","navipic","searchpic","trainpic","wordpic"]
-    let eventArray: NSArray = ["海城説明会","校内案内","ハーイ！ナビターイム！","ご注文はこの企画ですか？","The 鉄研","中高生が全力で〇〇やって見た！"]
-    let organArray: NSArray = ["海原会","文実ツアー部","高１有志","2年4組","鉄道研究部","出版部"]
+    var dataList:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        do {
+            //CSVファイルのパス名を取得
+            let csvPath = Bundle.main.path(forResource: "eventData", ofType: "csv")
+            //CSVファイルのデータを取得
+            let csvData = try String(contentsOfFile: csvPath!, encoding: String.Encoding.utf8)
+            //改行区切りでデータを分裂し、配列に格納
+            dataList = csvData.components(separatedBy: "\n")
+        } catch {
+            print(error)
+        }
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +40,8 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         //インスタンス生成
         let cell = table.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
         let img = UIImage(named:"\(imgArray[indexPath.row])")
+        //カンマ区切りでデータを分裂し、配列に格納
+        let dataDetail = dataList[indexPath.row].components(separatedBy: ",")
         
         //Tag1生成
         let imageView = table.viewWithTag(1) as! UIImageView
@@ -38,11 +49,11 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         
         //Tag2生成
         let label1 = table.viewWithTag(2) as! UILabel
-        label1.text = "\(eventArray[indexPath.row])"
+        label1.text = dataDetail[1]
         
         //Tag3の生成
         let label2 = table.viewWithTag(3) as! UILabel
-        label2.text = "\(organArray[indexPath.row])"
+        label2.text = dataDetail[2]
         
         return cell
     }
