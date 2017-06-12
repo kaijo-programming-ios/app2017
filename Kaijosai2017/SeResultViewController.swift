@@ -19,15 +19,21 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
     let eventArray = ["海城説明会","校内案内","ハーイ！ナビターイム！","ご注文はこの企画ですか？","The 鉄研","中高生が全力で〇〇やって見た！"]
     let organArray = ["海原会","文実ツアー部","高１有志","2年4組","鉄道研究部","出版部"]
     
+<<<<<<< HEAD
     // 検索結果の配列
     var searchResult1 = [String]()
     var searchResult2 = [String]()
     var searchResult3 = [String]()
+=======
+    let imgArray: NSArray = ["kaijopic","mappic","navipic","searchpic","trainpic","wordpic"]
+    var dataList:[String] = []
+>>>>>>> master
     
     // 初期化処理
     override func viewDidLoad() {
         super.viewDidLoad()
         
+<<<<<<< HEAD
         // デリゲート先の設定
         self.table.delegate = self
         self.table.dataSource = self
@@ -40,6 +46,19 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         searchResult1 = imgArray
         searchResult2 = eventArray
         searchResult3 = organArray
+=======
+        do {
+            //CSVファイルのパス名を取得
+            let csvPath = Bundle.main.path(forResource: "eventData", ofType: "csv")
+            //CSVファイルのデータを取得
+            let csvData = try String(contentsOfFile: csvPath!, encoding: String.Encoding.utf8)
+            //改行区切りでデータを分裂し、配列に格納
+            dataList = csvData.components(separatedBy: "\n")
+        } catch {
+            print(error)
+        }
+        
+>>>>>>> master
     }
     
     // セクションの数を返す
@@ -57,7 +76,13 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // インスタンス生成
         let cell = table.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
+<<<<<<< HEAD
         let img = UIImage(named:"\(searchResult1[indexPath.row])")
+=======
+        let img = UIImage(named:"\(imgArray[indexPath.row])")
+        //カンマ区切りでデータを分裂し、配列に格納
+        let dataDetail = dataList[indexPath.row].components(separatedBy: ",")
+>>>>>>> master
         
         // Tag1生成
         let imageView = table.viewWithTag(1) as! UIImageView
@@ -65,11 +90,19 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         
         // Tag2生成
         let label1 = table.viewWithTag(2) as! UILabel
+<<<<<<< HEAD
         label1.text = "\(searchResult2[indexPath.row])"
+=======
+        label1.text = dataDetail[1]
+>>>>>>> master
         
         // Tag3の生成
         let label2 = table.viewWithTag(3) as! UILabel
+<<<<<<< HEAD
         label2.text = "\(searchResult3[indexPath.row])"
+=======
+        label2.text = dataDetail[2]
+>>>>>>> master
         
         return cell
     }
