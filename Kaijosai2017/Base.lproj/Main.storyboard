@@ -351,7 +351,7 @@
         <!--企画詳細-->
         <scene sceneID="fJl-Wt-Zbt">
             <objects>
-                <viewController id="EQH-ZF-mps" sceneMemberID="viewController">
+                <viewController id="EQH-ZF-mps" customClass="eventDetailViewController" customModule="Kaijosai2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zCL-LT-Nkn"/>
                         <viewControllerLayoutGuide type="bottom" id="2la-Ov-9vu"/>
@@ -392,18 +392,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOm-zK-fYI">
-                                <rect key="frame" x="16" y="438" width="343" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="説明文あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mlP-pj-qKd">
+                                <rect key="frame" x="16" y="430" width="343" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
+                                <color key="backgroundColor" red="0.87204318579999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="企画詳細" id="pNz-FV-2d4">
                         <barButtonItem key="rightBarButtonItem" image="naviMenu" id="k0l-IK-sPN"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="OrganName" destination="JRC-OV-lu5" id="MUj-cY-Die"/>
+                        <outlet property="categorySet" destination="YkN-9T-wFl" id="WoZ-ao-jfA"/>
+                        <outlet property="detailText" destination="mlP-pj-qKd" id="0F2-qg-q93"/>
+                        <outlet property="eventName" destination="Uuf-1j-RwB" id="Ofb-xE-zpU"/>
+                        <outlet property="organName" destination="JRC-OV-lu5" id="RRk-60-0Rb"/>
+                        <outlet property="placeCode" destination="ffJ-g1-k7a" id="Wl9-eu-jfA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zg-gG-q90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
