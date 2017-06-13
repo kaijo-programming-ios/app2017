@@ -141,4 +141,27 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
      }
      */
     
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+    
+    //セグエで詳細ページに移動する際のデータの受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //セグエがshowDetailの時の処理
+        if segue.identifier == "showDetail" {
+            //セグエがshowDetailの時実行する
+            if let indexPath = self.table.indexPathForSelectedRow {
+                //行のデータを取り出す
+                let rowData = dataList[(indexPath as NSIndexPath).row].components(separatedBy: ",")
+                //移動先のビューコントローラのdataプロパティに値を設定する
+                (segue.destination as! eventDetailViewController).data = rowData
+            }
+        }
+    }
+
 }
