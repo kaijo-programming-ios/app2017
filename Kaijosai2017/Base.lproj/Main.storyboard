@@ -282,7 +282,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <segue destination="EQH-ZF-mps" kind="show" id="O9t-9d-Ovv"/>
+                                            <segue destination="EQH-ZF-mps" kind="show" identifier="showDetail" id="O9t-9d-Ovv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
