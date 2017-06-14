@@ -10,123 +10,204 @@ import UIKit
 
 class SeResultViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
+    // アウトレット接続
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableField: UITableView!
     
-    @IBOutlet weak var table: UITableView!
-    @IBOutlet weak var keywordSearchBar: UISearchBar!
-    
-    // 企画情報定義
-    let imgArray = ["kaijopic","mappic","navipic","searchpic","trainpic","wordpic"]
-    let eventArray = ["海城説明会","校内案内","ハーイ！ナビターイム！","ご注文はこの企画ですか？","The 鉄研","中高生が全力で〇〇やって見た！"]
-    let organArray = ["海原会","文実ツアー部","高１有志","2年4組","鉄道研究部","出版部"]
-    
-    // 検索結果の配列
-    var searchResult1 = [String]()
-    var searchResult2 = [String]()
-    var searchResult3 = [String]()
+    // 変数宣言
+    var originEvent = [""]             // 全データ（企画名）
+    var originOrgan = [""]             // 全データ（団体名）
+    var displayEvent = [""]            // 表示するデータ（企画名）
+    var displayOrgan = [""]            // 表示するデータ（団体名）
     var dataList:[String] = []
     
     // 初期化処理
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         // デリゲート先の設定
-        self.table.delegate = self
-        self.table.dataSource = self
-        keywordSearchBar.delegate = self
+        searchBar.delegate = self
+        tableField.delegate = self
+        tableField.dataSource = self
         
         // 何も入力されていなくても検索キーを押せるようにする
-        keywordSearchBar.enablesReturnKeyAutomatically = false
+        searchBar.enablesReturnKeyAutomatically = false
         
-        // 検索結果配列にデータをコピー
-        searchResult1 = imgArray
-        searchResult2 = eventArray
-        searchResult3 = organArray
+        // CSV ファイル読み込み
         do {
-            //CSVファイルのパス名を取得
+            // CSV ファイルのパス名を取得
             let csvPath = Bundle.main.path(forResource: "eventData", ofType: "csv")
-            //CSVファイルのデータを取得
+            
+            // CSV ファイルのデータを取得
             let csvData = try String(contentsOfFile: csvPath!, encoding: String.Encoding.utf8)
-            //改行区切りでデータを分裂し、配列に格納
+            
+            // 改行区切りでデータを分割し、配列に格納
             dataList = csvData.components(separatedBy: "\n")
         } catch {
             print(error)
         }
+        
+        // カンマ区切りでデータを分裂し、配列に格納
+        var index = 0;
+        while index < dataList.count
+        {
+            let dataDetail = dataList[index].components(separatedBy: ",")
+            originEvent.insert(dataDetail[1], at: index);
+            originOrgan.insert(dataDetail[2], at: index);
+            index += 1
+        }
+        
+        originEvent.removeLast()
+        originOrgan.removeLast()
+        
+        // 表示用配列の初期化（最初は origin をコピーして全て表示する）
+        displayEvent = originEvent
+        displayOrgan = originOrgan
+        
+        // テーブル再表示
+        tableField.reloadData()
     }
     
-    // Cellに値を設定する
+    // テーブルの行数を指定する
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        // 表示用配列の要素数 + 1（件数表示行）を返す
+        return displayEvent.count + 1
+    }
+    
+    // Cell に値を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // インスタンス生成
-        let cell = table.dequeueReusableCell(withIdentifier: "tableCell", for: indexPath)
-        let img = UIImage(named:"\(imgArray[indexPath.row])")
-        //カンマ区切りでデータを分裂し、配列に格納
-        let dataDetail = dataList[indexPath.row].components(separatedBy: ",")
+        // セルのスタイルを指定する
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "myCell")
         
-        // Tag1生成
-        let imageView = table.viewWithTag(1) as! UIImageView
-        imageView.image = img
+        // 最終行かそうでないかで分岐
+        if indexPath.row == displayEvent.count
+        {
+            // 最終行の場合は検索結果件数を表示
+            cell.textLabel?.textColor = UIColor.lightGray
+            cell.textLabel?.text = "\(displayEvent.count)件の検索結果"
+            
+            // 選択不可にする
+            cell.selectionStyle = .none
+        }
+        else
+        {
+            // 企画名
+            cell.textLabel?.text = displayEvent[indexPath.row]
+            // 団体名
+            cell.detailTextLabel?.text = displayOrgan[indexPath.row]
+        }
         
-        // Tag2生成
-        let label1 = table.viewWithTag(2) as! UILabel
-        label1.text = "\(searchResult2[indexPath.row])"
-        label1.text = dataDetail[1]
-        
-        // Tag3の生成
-        let label2 = table.viewWithTag(3) as! UILabel
-        label2.text = "\(searchResult3[indexPath.row])"
-        label2.text = dataDetail[2]
+        // セルのアクセサリを設定
+        cell.accessoryType = .none
         
         return cell
     }
     
-    // テーブルに表示する配列の総数を返す
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResult2.count
+    // 最終行を選択不可にする
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath?
+    {
+        // 最終行の件数セルは選択不可
+        if indexPath.row >= displayEvent.count { return nil }
+        else { return indexPath }
     }
     
-    // ?
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return searchResult2.count
-    }
-    
-    // ?
-    override func viewWillAppear(_ animated: Bool) {
-        self.table.reloadData()
-        super.viewWillAppear(animated)
-    }
-    
-    // 検索処理
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        keywordSearchBar.endEditing(true)
+    // サーチバーで検索ボタンが押された時の処理
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        // キーボードをしまう
+        searchBar.resignFirstResponder()
         
-        // カウンター変数
-        var counter = 0
-        
-        // 一旦検索結果をリセット
-        searchResult1.removeAll()
-        searchResult2.removeAll()
-        searchResult3.removeAll()
-        
-        if(keywordSearchBar.text == "") {
-            // 空の時は全表示
-            searchResult1 = imgArray
-            searchResult2 = eventArray
-            searchResult3 = organArray
-        } else {
-            for data in eventArray {
-                if data.contains(keywordSearchBar.text!) {
-                    // 絞ったデータを代入
-                    searchResult2.append(data)
-                    searchResult1.append(imgArray[counter])
-                    searchResult3.append(organArray[counter])
+        if searchBar.text == ""
+        {
+            // 空文字列の場合は全表示
+            displayEvent = originEvent
+            displayOrgan = originOrgan
+        }
+        else
+        {
+            // 表示用配列を初期化
+            displayEvent = []
+            displayOrgan = []
+            
+            // 処理中のインデックス
+            var index = 0
+            
+            // 検索モードにより分岐
+            if searchBar.selectedScopeButtonIndex == 0
+            {
+                // 「企画名から」が選択されている場合
+                for event in originEvent
+                {
+                    // 検索対象文字を含んでいれば表示用配列（企画名）に追加
+                    if event.range(of: searchBar.text!) != nil
+                    {
+                        displayEvent.append(event)
+                        displayOrgan.append(originOrgan[index])
+                    }
+                    index += 1
                 }
-                counter += 1
+                
+            }
+            else
+            {
+                // 「団体名から」が選択されている場合
+                for organ in originOrgan
+                {
+                    // 検索対象文字を含んでいれば表示用配列（団体名）に追加
+                    if organ.range(of: searchBar.text!) != nil
+                    {
+                        displayOrgan.append(organ)
+                        displayEvent.append(originEvent[index])
+                    }
+                    index += 1
+                }
             }
         }
-        self.table.reloadData()
+        
+        // テーブル再表示
+        tableField.reloadData()
     }
     
-    override func didReceiveMemoryWarning() {
+    // サーチバーのキャンセルボタンが押された時の処理
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar)
+    {
+        // サーチバーの中身を空にする
+        searchBar.text = ""
+        
+        // キーボードをしまう
+        searchBar.resignFirstResponder()
+        
+        // 表示用配列を元の配列と同じにする
+        displayEvent = originEvent
+        displayOrgan = originOrgan
+        
+        // テーブル再表示
+        tableField.reloadData()
+    }
+    
+    // セグエで詳細ページに移動する際のデータの受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        // セグエが showDetail の時の処理
+        if segue.identifier == "showDetail"
+        {
+            // セグエが showDetail の時実行する
+            if let indexPath = tableField.indexPathForSelectedRow
+            {
+                // 行のデータを取り出す
+                let rowData = dataList[(indexPath as NSIndexPath).row].components(separatedBy: ",")
+                
+                // 移動先のビューコントローラの data プロパティに値を設定する
+                (segue.destination as! eventDetailViewController).data = rowData
+            }
+        }
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -144,24 +225,4 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-    //セグエで詳細ページに移動する際のデータの受け渡し
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //セグエがshowDetailの時の処理
-        if segue.identifier == "showDetail" {
-            //セグエがshowDetailの時実行する
-            if let indexPath = self.table.indexPathForSelectedRow {
-                //行のデータを取り出す
-                let rowData = dataList[(indexPath as NSIndexPath).row].components(separatedBy: ",")
-                //移動先のビューコントローラのdataプロパティに値を設定する
-                (segue.destination as! eventDetailViewController).data = rowData
-            }
-        }
-    }
-
 }
