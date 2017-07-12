@@ -17,6 +17,7 @@
 		4DAEF2C01EE6CA7B00AC9187 /* Kaijosai2017Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2BF1EE6CA7B00AC9187 /* Kaijosai2017Tests.swift */; };
 		4DAEF2CB1EE6CA7B00AC9187 /* Kaijosai2017UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2CA1EE6CA7B00AC9187 /* Kaijosai2017UITests.swift */; };
 		4DAEF2E11EE6D33E00AC9187 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4DAEF2E01EE6D33E00AC9187 /* Images.xcassets */; };
+		4DB579D41EEFE79E0047D90E /* eventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		4DAEF2CA1EE6CA7B00AC9187 /* Kaijosai2017UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kaijosai2017UITests.swift; sourceTree = "<group>"; };
 		4DAEF2CC1EE6CA7B00AC9187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DAEF2E01EE6D33E00AC9187 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */,
 				4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */,
 				4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */,
+				4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */,
 				4D5718721EE97013003B95D4 /* SeResultViewController.swift */,
 				4DAEF2B31EE6CA7B00AC9187 /* LaunchScreen.storyboard */,
 				4DAEF2B61EE6CA7B00AC9187 /* Info.plist */,
@@ -273,6 +276,7 @@
 				4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */,
 				4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */,
 				4DAEF2B01EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld in Sources */,
+				4DB579D41EEFE79E0047D90E /* eventDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
