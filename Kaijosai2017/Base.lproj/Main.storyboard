@@ -281,6 +281,7 @@
                     <connections>
                         <outlet property="searchBar" destination="XFo-fG-y6Q" id="lDI-WR-fTk"/>
                         <outlet property="tableField" destination="wXw-jz-bpg" id="avS-Nv-fcb"/>
+                        <segue destination="EQH-ZF-mps" kind="show" identifier="showDetail" id="NFa-m8-1IP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XGJ-9S-TRo" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -355,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zg-gG-q90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1784.8" y="-961.16941529235385"/>
+            <point key="canvasLocation" x="4521" y="-224"/>
         </scene>
         <!--場所から検索-->
         <scene sceneID="Icq-8K-Ufa">
