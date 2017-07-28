@@ -20,6 +20,7 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
     var displayEvent = [""]            // 表示するデータ（企画名）
     var displayOrgan = [""]            // 表示するデータ（団体名）
     var dataList:[String] = []
+    var displayList:[String] = []      // 画面遷移時のデータリスト
     
     // 初期化処理
     override func viewDidLoad()
@@ -64,6 +65,9 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         // 表示用配列の初期化（最初は origin をコピーして全て表示する）
         displayEvent = originEvent
         displayOrgan = originOrgan
+        
+        // 画面遷移準備（初期設定）
+        displayList = dataList
         
         // テーブル再表示
         tableField.reloadData()
@@ -128,9 +132,10 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else
         {
-            // 表示用配列を初期化
+            // 表示用・伝達用配列を初期化
             displayEvent = []
             displayOrgan = []
+            displayList = []
             
             // 処理中のインデックス
             var index = 0
@@ -146,6 +151,8 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
                     {
                         displayEvent.append(event)
                         displayOrgan.append(originOrgan[index])
+                        displayList.append(dataList[index])
+                        
                     }
                     index += 1
                 }
@@ -161,6 +168,7 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
                     {
                         displayOrgan.append(organ)
                         displayEvent.append(originEvent[index])
+                        displayList.append(dataList[index])
                     }
                     index += 1
                 }
@@ -183,6 +191,7 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         // 表示用配列を元の配列と同じにする
         displayEvent = originEvent
         displayOrgan = originOrgan
+        displayList = dataList
         
         // テーブル再表示
         tableField.reloadData()
@@ -195,7 +204,7 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.deselectRow(at: indexPath, animated: true)
         
         // 指定した ID の Segue を初期化
-        self.performSegue(withIdentifier: "showDetail", sender: dataList[(indexPath as NSIndexPath).row].components(separatedBy: ","))
+        self.performSegue(withIdentifier: "showDetail", sender: displayList[(indexPath as NSIndexPath).row].components(separatedBy: ","))
     }
     
     // セグエで詳細ページに移動する際のデータの受け渡し
