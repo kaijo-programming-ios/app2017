@@ -45,6 +45,7 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
             
             // 改行区切りでデータを分割し、配列に格納
             dataList = csvData.components(separatedBy: "\n")
+            dataList.removeLast()
         } catch {
             print(error)
         }
@@ -54,8 +55,8 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         while index < dataList.count
         {
             let dataDetail = dataList[index].components(separatedBy: ",")
-            originEvent.insert(dataDetail[1], at: index);
-            originOrgan.insert(dataDetail[2], at: index);
+            originEvent.insert(dataDetail[2], at: index);
+            originOrgan.insert(dataDetail[1], at: index);
             index += 1
         }
         

@@ -24,11 +24,11 @@ class eventDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        placeCode.text = "場所コード：" + String(data[0]) + "　場所：" + String(data[4])
-        eventName.text = data[1]
-        organName.text = data[2]
-        categorySet.text = data[3]
-        detailText.text = data[5]
+//        placeCode.text = "場所コード：" + String(data[0]) + "　場所：" + String(data[4])
+        eventName.text = data[2]
+        organName.text = data[1]
+//        categorySet.text = data[3]
+        detailText.text = data[4]
         
         
         print(data)
