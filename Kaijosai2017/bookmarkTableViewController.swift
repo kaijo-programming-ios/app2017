@@ -146,6 +146,26 @@ class bookmarkTableViewController: UITableViewController {
         }
     }
     
+    // Cell が選択された時の処理
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        // セルの選択解除
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        // 指定した ID の Segue を初期化
+        self.performSegue(withIdentifier: "showDetail2", sender: bookmarkList[(indexPath as NSIndexPath).row].components(separatedBy: ","))
+    }
+    
+    // セグエで詳細ページに移動する際のデータの受け渡し
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        // セグエが showDetail の時の処理
+        if segue.identifier == "showDetail2"
+        {
+            // 移動先のビューコントローラの data プロパティに値を設定する
+            (segue.destination as! eventDetailViewController).data = sender as! [String]
+        }
+    }
     
     
 }

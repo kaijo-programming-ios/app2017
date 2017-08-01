@@ -233,6 +233,7 @@
                     <navigationItem key="navigationItem" title="ブックマーク一覧" id="j9G-Pn-Ps9"/>
                     <connections>
                         <outlet property="testTableView" destination="MPz-fW-Wxl" id="gOQ-rg-m3A"/>
+                        <segue destination="EQH-ZF-mps" kind="show" identifier="showDetail2" id="a4L-4Q-f0i"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eTJ-KV-fYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -497,4 +498,7 @@
         <image name="setabMap" width="24" height="24"/>
         <image name="setabWord" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="a4L-4Q-f0i"/>
+    </inferredMetricsTieBreakers>
 </document>
