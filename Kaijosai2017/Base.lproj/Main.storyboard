@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hss-BG-bRl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Hss-BG-bRl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -58,6 +58,15 @@
                                     <constraint firstAttribute="width" secondItem="Uqq-0K-1Yt" secondAttribute="height" multiplier="35:11" id="84d-7d-dsX"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3TI-eK-Zmw">
+                                <rect key="frame" x="140" y="411" width="95" height="95"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.85434602860996445" blue="0.62940742918312687" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" image="homeBookmark"/>
+                                <connections>
+                                    <segue destination="wbH-oc-9fZ" kind="show" id="evJ-it-AeW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -181,6 +190,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xG-Ok-JWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3652" y="429.53523238380814"/>
+        </scene>
+        <!--ブックマーク一覧-->
+        <scene sceneID="QN8-q5-8Ud">
+            <objects>
+                <tableViewController id="wbH-oc-9fZ" customClass="bookmarkTableViewController" customModule="Kaijosai2017" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MPz-fW-Wxl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TestCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TestCell" textLabel="Goz-Sl-8tw" detailTextLabel="XRj-kc-tf5" style="IBUITableViewCellStyleValue1" id="zyp-g9-9qd">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zyp-g9-9qd" id="7Kx-iz-9BF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Goz-Sl-8tw">
+                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XRj-kc-tf5">
+                                            <rect key="frame" x="316" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wbH-oc-9fZ" id="dbk-NY-vCy"/>
+                            <outlet property="delegate" destination="wbH-oc-9fZ" id="7ag-2Y-r37"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="ブックマーク一覧" id="j9G-Pn-Ps9"/>
+                    <connections>
+                        <outlet property="testTableView" destination="MPz-fW-Wxl" id="gOQ-rg-m3A"/>
+                        <segue destination="EQH-ZF-mps" kind="show" identifier="showDetail2" id="a4L-4Q-f0i"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eTJ-KV-fYE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="-223"/>
         </scene>
         <!--企画検索-->
         <scene sceneID="KyY-UL-dUA">
@@ -339,6 +397,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ブックマーク登録済み" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxX-dM-SBH">
+                                <rect key="frame" x="270" y="218" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlD-2A-QgX">
+                                <rect key="frame" x="291" y="150" width="60" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="detailBookmark"/>
+                                <connections>
+                                    <action selector="booking:" destination="EQH-ZF-mps" eventType="touchUpInside" id="UXp-pc-AjN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -347,6 +420,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="OrganName" destination="JRC-OV-lu5" id="MUj-cY-Die"/>
+                        <outlet property="bookEnable" destination="UlD-2A-QgX" id="y9x-Tm-nun"/>
+                        <outlet property="bookedLabel" destination="hxX-dM-SBH" id="rMK-Dt-hnP"/>
                         <outlet property="categorySet" destination="YkN-9T-wFl" id="WoZ-ao-jfA"/>
                         <outlet property="detailText" destination="mlP-pj-qKd" id="0F2-qg-q93"/>
                         <outlet property="eventName" destination="Uuf-1j-RwB" id="Ofb-xE-zpU"/>
@@ -356,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zg-gG-q90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4521" y="-224"/>
+            <point key="canvasLocation" x="3652" y="-971.06446776611699"/>
         </scene>
         <!--場所から検索-->
         <scene sceneID="Icq-8K-Ufa">
@@ -417,6 +492,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="detailBookmark" width="137" height="137"/>
+        <image name="homeBookmark" width="128" height="128"/>
         <image name="homeMap" width="256" height="256"/>
         <image name="homeSearch" width="256" height="256"/>
         <image name="homeStamp" width="256" height="256"/>
@@ -426,4 +503,7 @@
         <image name="setabMap" width="24" height="24"/>
         <image name="setabWord" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="a4L-4Q-f0i"/>
+    </inferredMetricsTieBreakers>
 </document>
