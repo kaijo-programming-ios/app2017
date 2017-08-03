@@ -404,10 +404,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdC-Eg-8Tu">
-                                <rect key="frame" x="299" y="165" width="45" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlD-2A-QgX">
+                                <rect key="frame" x="291" y="150" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="detailBookmark"/>
+                                <connections>
+                                    <action selector="booking:" destination="EQH-ZF-mps" eventType="touchUpInside" id="UXp-pc-AjN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -417,6 +420,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="OrganName" destination="JRC-OV-lu5" id="MUj-cY-Die"/>
+                        <outlet property="bookEnable" destination="UlD-2A-QgX" id="y9x-Tm-nun"/>
+                        <outlet property="bookedLabel" destination="hxX-dM-SBH" id="rMK-Dt-hnP"/>
                         <outlet property="categorySet" destination="YkN-9T-wFl" id="WoZ-ao-jfA"/>
                         <outlet property="detailText" destination="mlP-pj-qKd" id="0F2-qg-q93"/>
                         <outlet property="eventName" destination="Uuf-1j-RwB" id="Ofb-xE-zpU"/>
@@ -426,7 +431,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Zg-gG-q90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3652" y="-971"/>
+            <point key="canvasLocation" x="3652" y="-971.06446776611699"/>
         </scene>
         <!--場所から検索-->
         <scene sceneID="Icq-8K-Ufa">
