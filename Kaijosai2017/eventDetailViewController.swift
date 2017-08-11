@@ -23,41 +23,45 @@ class eventDetailViewController: UIViewController {
     var bookmarkList2:[String] = []
     var bookmarkNums:[String] = []
     
-    //CSVファイルの保存先
+    // CSV ファイルの保存先
     var userPath:String!
     let fileManager = FileManager()
     
-    
-    //検索画面からのデータ受け取り
+    // 検索画面からのデータ受け取り
     var data:[String] = []
     
-
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         // CSV ファイル読み込み
-        do {
-            //ユーザーが保存したCSVファイルのパス
+        do
+        {
+            // ユーザーが保存した CSV ファイルのパス
             userPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] + "/bookmarks.csv"
             
             var path = userPath
-            if(fileManager.fileExists(atPath: path!) == false){
-                //ユーザーが保存したCSVファイルが無い場合は、初期CSVファイルから読み込む。
+            if (fileManager.fileExists(atPath: path!) == false)
+            {
+                // ユーザーが保存した CSV ファイルが無い場合は、初期 CSV ファイルから読み込む。
                 path = Bundle.main.path(forResource: "bookmarks", ofType: "csv")
                 let csvData2 = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
                 bookmarkList = csvData2.components(separatedBy: "\n")
-                //原因不明のバグを直すための調整
+                
+                // 原因不明のバグを直すための調整
                 bookmarkList.removeLast()
-            } else {
-                //ユーザーが保存したCSVファイルのデータを取得する。
+            }
+            else
+            {
+                // ユーザーが保存したCSVファイルのデータを取得する。
                 let csvData = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
                 bookmarkList = csvData.components(separatedBy: "\n")
             }
             
-            //CSVファイルの出力先を確認する。
-//            print(userPath)
+            // CSV ファイルの出力先を確認する。
+            // print(userPath)
             
-            // カンマ区切りでデータを分裂し、配列に格納
+            // カンマ区切りでデータを分割し、配列に格納
             var index = 0;
             while index < bookmarkList.count
             {
@@ -70,27 +74,31 @@ class eventDetailViewController: UIViewController {
             print(error)
         }
         
-        for nums in bookmarkNums {
-            if String(nums) == String(data[0]) {
+        for nums in bookmarkNums
+        {
+            if String(nums) == String(data[0])
+            {
                 bookedLabel.text = "ブックマーク登録済み"
                 bookEnable.isEnabled = false
                 break
-            } else {
+            }
+            else
+            {
                 bookedLabel.text = "ブックマーク未登録"
                 bookEnable.isEnabled = true
             }
         }
         
-//        placeCode.text = "場所コード：" + String(data[0]) + "　場所：" + String(data[4])
-        eventName.text = data[2]
+        // 番号, 団体名, 企画名, 責任者, 詳細説明, カテゴリー
+        // placeCode.text = "場所コード：" + String(data[0]) + "　場所：" + String(data[4])
         organName.text = data[1]
-//        categorySet.text = data[3]
+        eventName.text = data[2]
         detailText.text = data[4]
-        
-       
+        categorySet.text = data[5]
     }
     
-    @IBAction func booking(_ sender: Any) {
+    @IBAction func booking(_ sender: Any)
+    {
         let dataStr = data.joined(separator: ",")
         bookmarkList.append(dataStr)
         saveCSV()
@@ -99,18 +107,23 @@ class eventDetailViewController: UIViewController {
         bookedAlert()
     }
     
-    //CSVファイル保存メソッド
-    func saveCSV() {
+    // CSVファイル保存メソッド
+    func saveCSV()
+    {
         
-        //改行区切りで部活配列を連結する。
+        // 改行区切りで部活配列を連結する。
         let outputStr = bookmarkList.joined(separator: "\n")
         
-        do {
-            if(outputStr == "") {
-                //部活配列が空の場合はユーザーが保存したCSVファイルを削除する。
+        do
+        {
+            if (outputStr == "")
+            {
+                // 部活配列が空の場合はユーザーが保存した CSV ファイルを削除する。
                 try fileManager.removeItem(atPath: userPath)
-            } else {
-                //ファイルを出力する。
+            }
+            else
+            {
+                // ファイルを出力する。
                 try outputStr.write(toFile: userPath, atomically: false, encoding: String.Encoding.utf8 )
             }
         } catch {
@@ -118,19 +131,20 @@ class eventDetailViewController: UIViewController {
         }
     }
     
-    //ブックマーク登録完了のアラート表示
-    func bookedAlert() {
+    // ブックマーク登録完了のアラート表示
+    func bookedAlert()
+    {
         let alert = UIAlertController(title: "ブックマーク登録しました", message: "ホーム画面からいつでもアクセス可能です。", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "完了", style: .default))
         self.present(alert, animated: true, completion: nil)
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -140,5 +154,4 @@ class eventDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
