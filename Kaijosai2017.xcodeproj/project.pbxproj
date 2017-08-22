@@ -20,6 +20,7 @@
 		4DB579D41EEFE79E0047D90E /* eventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */; };
 		9F1035CB1F30378100C16E32 /* bookmarks.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9F1035CA1F30378100C16E32 /* bookmarks.csv */; };
 		9F1DE0D31F2F04F20073C3D5 /* bookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1DE0D21F2F04F20073C3D5 /* bookmarkTableViewController.swift */; };
+		9F38C5531F45962A00F36B45 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = eventDetailViewController.swift; sourceTree = "<group>"; };
 		9F1035CA1F30378100C16E32 /* bookmarks.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bookmarks.csv; sourceTree = "<group>"; };
 		9F1DE0D21F2F04F20073C3D5 /* bookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bookmarkTableViewController.swift; sourceTree = "<group>"; };
+		9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */,
 				4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */,
 				4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */,
+				9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */,
 				4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */,
 				4D5718721EE97013003B95D4 /* SeResultViewController.swift */,
 				4DAEF2B31EE6CA7B00AC9187 /* LaunchScreen.storyboard */,
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F38C5531F45962A00F36B45 /* TimeTableViewController.swift in Sources */,
 				4DAEF2AA1EE6CA7B00AC9187 /* ViewController.swift in Sources */,
 				4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */,
 				4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */,
