@@ -81,11 +81,11 @@ class eventDetailViewController: UIViewController {
             }
         }
         
-//        placeCode.text = "場所コード：" + String(data[0]) + "　場所：" + String(data[4])
+        placeCode.text = "場所コード：" + String(data[5]) + "　場所：" + String(data[4])
         eventName.text = data[2]
         organName.text = data[1]
 //        categorySet.text = data[3]
-        detailText.text = data[4]
+        detailText.text = data[3]
         
        
     }
