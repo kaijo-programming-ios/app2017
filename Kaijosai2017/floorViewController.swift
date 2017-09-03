@@ -40,6 +40,85 @@ class floorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func b1201(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue12", sender: dataList[0].components(separatedBy: ","))
+    }
+    @IBAction func b1202(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue12", sender: dataList[1].components(separatedBy: ","))
+    }
+    @IBAction func b1203(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue12", sender: dataList[2].components(separatedBy: ","))
+    }
+    @IBAction func b1204(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue12", sender: dataList[3].components(separatedBy: ","))
+    }
+    @IBAction func b1205(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue12", sender: dataList[4].components(separatedBy: ","))
+    }
+    @IBAction func b1206(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue12", sender: dataList[5].components(separatedBy: ","))
+    }
+    @IBAction func b1301(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue13", sender: dataList[6].components(separatedBy: ","))
+    }
+    @IBAction func b1302(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue13", sender: dataList[7].components(separatedBy: ","))
+    }
+    @IBAction func b1303(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue13", sender: dataList[8].components(separatedBy: ","))
+    }
+    @IBAction func b1304(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue13", sender: dataList[9].components(separatedBy: ","))
+    }
+    @IBAction func b1305(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue13", sender: dataList[10].components(separatedBy: ","))
+    }
+    @IBAction func b2301(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[11].components(separatedBy: ","))
+    }
+    @IBAction func b2302(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[12].components(separatedBy: ","))
+    }
+    @IBAction func b2303(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[13].components(separatedBy: ","))
+    }
+    @IBAction func b2304(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[14].components(separatedBy: ","))
+    }
+    @IBAction func b2305(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[15].components(separatedBy: ","))
+    }
+    @IBAction func b2306(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[16].components(separatedBy: ","))
+    }
+    @IBAction func b2307(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[17].components(separatedBy: ","))
+    }
+    @IBAction func b2308(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[18].components(separatedBy: ","))
+    }
+    @IBAction func b2309(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue23", sender: dataList[19].components(separatedBy: ","))
+    }
+    @IBAction func b2401(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue24", sender: dataList[20].components(separatedBy: ","))
+    }
+    @IBAction func b2402(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue24", sender: dataList[21].components(separatedBy: ","))
+    }
+    @IBAction func b2403(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue24", sender: dataList[22].components(separatedBy: ","))
+    }
+    @IBAction func b2404(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue24", sender: dataList[23].components(separatedBy: ","))
+    }
+    @IBAction func b2405(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue24", sender: dataList[24].components(separatedBy: ","))
+    }
+    @IBAction func b2406(_ sender: Any) {
+        self.performSegue(withIdentifier: "segue24", sender: dataList[25].components(separatedBy: ","))
+    }
     @IBAction func b3101(_ sender: Any) {
         self.performSegue(withIdentifier: "segue31", sender: dataList[52].components(separatedBy: ","))
     }
