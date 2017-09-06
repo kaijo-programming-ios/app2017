@@ -31,6 +31,10 @@ class floorViewController: UIViewController {
         }
         
      
+        let menuButton:UIBarButtonItem = UIBarButtonItem(image: UIImage(named:"naviMenu"), style: .plain, target: self, action: #selector(floorViewController.sideMenu))
+        self.tabBarController?.navigationItem.rightBarButtonItem = menuButton
+
+        
         // アニメーションの設定
         // Do any additional setup after loading the view.
     }
@@ -40,6 +44,10 @@ class floorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func sideMenu() {
+        
+    }
     
     @IBAction func b1201(_ sender: Any) {
         self.performSegue(withIdentifier: "segue12", sender: dataList[0].components(separatedBy: ","))
