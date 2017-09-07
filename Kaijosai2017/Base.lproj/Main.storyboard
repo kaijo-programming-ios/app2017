@@ -109,15 +109,15 @@
             </objects>
             <point key="canvasLocation" x="868" y="792.95352323838085"/>
         </scene>
-        <!--View Controller-->
+        <!--カテゴリー別リスト-->
         <scene sceneID="IzJ-up-n0H">
             <objects>
-                <viewController id="UhF-pX-KEA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="categoryListViewController" title="カテゴリー別リスト" id="UhF-pX-KEA" customClass="categoryList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dqs-MR-DRR"/>
                         <viewControllerLayoutGuide type="bottom" id="j3w-49-3zd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XQd-uy-Oug">
+                    <view key="view" contentMode="scaleToFill" id="XQd-uy-Oug" customClass="divWithCategoryList">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
