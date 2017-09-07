@@ -61,6 +61,14 @@ class floorViewController: UIViewController {
         // アニメーションの設定
         // Do any additional setup after loading the view.
     }
+    
+    //　画面遷移時、サイドメニューが出ていれば閉じる
+    override func viewWillDisappear(_ animated: Bool) {
+        if isDisplayedSideMenu == true {
+            closeSideMenu()
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

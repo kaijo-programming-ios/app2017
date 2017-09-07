@@ -96,6 +96,14 @@ class SeResultViewController: UIViewController, UITableViewDataSource, UITableVi
         tableField.reloadData()
     }
     
+    //　画面遷移時、サイドメニューが出ていれば閉じる
+    override func viewWillDisappear(_ animated: Bool) {
+        if isDisplayedSideMenu == true {
+            closeSideMenu()
+        }
+    }
+    
+    
     // テーブルの行数を指定する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {

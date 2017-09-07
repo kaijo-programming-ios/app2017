@@ -111,6 +111,14 @@ class eventDetailViewController: UIViewController {
        
     }
     
+    //　画面遷移時、サイドメニューが出ていれば閉じる
+    override func viewWillDisappear(_ animated: Bool) {
+        if isDisplayedSideMenu == true {
+            closeSideMenu()
+        }
+    }
+    
+    
     @IBAction func booking(_ sender: Any) {
         let dataStr = data.joined(separator: ",")
         bookmarkList.append(dataStr)

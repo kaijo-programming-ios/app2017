@@ -71,7 +71,7 @@ class bookmarkTableViewController: UITableViewController {
     //セル数
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return bookmarkList.count
+        return bookmarkList.count + 1
     }
 
     //セル情報
@@ -79,12 +79,22 @@ class bookmarkTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TestCell", for: indexPath)
 
         
-        //カンマでデータを分割して配列に格納する。
-        let bookmarkDetail = bookmarkList[indexPath.row].components(separatedBy: ",")
         
-        //セルのラベルに企画名、団体名を設定する
-        cell.textLabel?.text = bookmarkDetail[2]
-        cell.detailTextLabel?.text = bookmarkDetail[1]
+        
+        if indexPath.row == bookmarkList.count {
+            // 最終行の場合はリセットボタン
+            cell.textLabel?.textColor = UIColor.red
+            cell.textLabel?.text = "ブックマークをリセットする"
+            cell.detailTextLabel?.text = ""
+
+        } else {
+            //カンマでデータを分割して配列に格納する。
+            let bookmarkDetail = bookmarkList[indexPath.row].components(separatedBy: ",")
+            //セルのラベルに企画名、団体名を設定する
+            cell.textLabel?.text = bookmarkDetail[2]
+            cell.detailTextLabel?.text = bookmarkDetail[1]
+        }
+        
         
         return cell
         
@@ -92,7 +102,12 @@ class bookmarkTableViewController: UITableViewController {
     
     //編集可能設定
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if indexPath.row == bookmarkList.count {
+            return false
+        } else {
+            return true
+        }
+        
     }
     
     //編集モード設定
@@ -149,11 +164,19 @@ class bookmarkTableViewController: UITableViewController {
     // Cell が選択された時の処理
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        // セルの選択解除
-        tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.row == bookmarkList.count {
+            // セルの選択解除
+            tableView.deselectRow(at: indexPath, animated: true)
+            showAlert()
+            
+        } else {
+            // セルの選択解除
+            tableView.deselectRow(at: indexPath, animated: true)
+            
+            // 指定した ID の Segue を初期化
+            self.performSegue(withIdentifier: "showDetail2", sender: bookmarkList[(indexPath as NSIndexPath).row].components(separatedBy: ","))
+        }
         
-        // 指定した ID の Segue を初期化
-        self.performSegue(withIdentifier: "showDetail2", sender: bookmarkList[(indexPath as NSIndexPath).row].components(separatedBy: ","))
     }
     
     // セグエで詳細ページに移動する際のデータの受け渡し
@@ -167,5 +190,32 @@ class bookmarkTableViewController: UITableViewController {
         }
     }
     
+    func showAlert() {
+        
+        // アラートを作成
+        let alert = UIAlertController(
+            title: "注意",
+            message: "本当にブックマークを削除しますか？（この処理は取り消せません）",
+            preferredStyle: .alert)
+        
+        // アラートにボタンをつける
+        alert.addAction(UIAlertAction(title: "削除", style: .default, handler: { action in
+            self.bookmarkRemove()
+        }))
+        alert.addAction(UIAlertAction(title: "キャンセル", style: .cancel))
+        
+        // アラート表示
+        self.present(alert, animated: true, completion: nil)
+    }
     
+    func bookmarkRemove() {
+        if bookmarkList.count != 0 {
+            bookmarkList.removeAll()
+            //テーブルの再読み込み
+            tableView.reloadData()
+            
+            //CSVファイルにデータを保存する。
+            saveCSV()
+        }
+    }
 }

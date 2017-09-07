@@ -10,7 +10,6 @@
 		4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5718721EE97013003B95D4 /* SeResultViewController.swift */; };
 		4D83B5871EEE95540063D1E3 /* eventData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4D83B5861EEE95540063D1E3 /* eventData.csv */; };
 		4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */; };
-		4DAEF2AA1EE6CA7B00AC9187 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */; };
 		4DAEF2AD1EE6CA7B00AC9187 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */; };
 		4DAEF2B01EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2AE1EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld */; };
 		4DAEF2B51EE6CA7B00AC9187 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4DAEF2B31EE6CA7B00AC9187 /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 		9F1C52E71F603D2700C0CF1F /* sideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C52E61F603D2700C0CF1F /* sideBarViewController.swift */; };
 		9F1DE0D31F2F04F20073C3D5 /* bookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1DE0D21F2F04F20073C3D5 /* bookmarkTableViewController.swift */; };
 		9F38C5531F45962A00F36B45 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */; };
-		9F743F5E1F613870000F4697 /* sideControllingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F743F5D1F613870000F4697 /* sideControllingViewController.swift */; };
 		9F759B1E1F5AB11200879326 /* floorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F759B1D1F5AB11200879326 /* floorViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +46,6 @@
 		4D83B5861EEE95540063D1E3 /* eventData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eventData.csv; sourceTree = "<group>"; };
 		4DAEF2A41EE6CA7B00AC9187 /* Kaijosai2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaijosai2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4DAEF2AC1EE6CA7B00AC9187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DAEF2AF1EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kaijosai2017.xcdatamodel; sourceTree = "<group>"; };
 		4DAEF2B41EE6CA7B00AC9187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,7 +62,6 @@
 		9F1C52E61F603D2700C0CF1F /* sideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideBarViewController.swift; sourceTree = "<group>"; };
 		9F1DE0D21F2F04F20073C3D5 /* bookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bookmarkTableViewController.swift; sourceTree = "<group>"; };
 		9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
-		9F743F5D1F613870000F4697 /* sideControllingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideControllingViewController.swift; sourceTree = "<group>"; };
 		9F759B1D1F5AB11200879326 /* floorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = floorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,9 +118,7 @@
 			children = (
 				9F1DE0D21F2F04F20073C3D5 /* bookmarkTableViewController.swift */,
 				4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */,
-				4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */,
 				4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */,
-				9F743F5D1F613870000F4697 /* sideControllingViewController.swift */,
 				9F1C52E61F603D2700C0CF1F /* sideBarViewController.swift */,
 				9F759B1D1F5AB11200879326 /* floorViewController.swift */,
 				9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */,
@@ -293,7 +287,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F38C5531F45962A00F36B45 /* TimeTableViewController.swift in Sources */,
-				4DAEF2AA1EE6CA7B00AC9187 /* ViewController.swift in Sources */,
 				4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */,
 				9F1C52E71F603D2700C0CF1F /* sideBarViewController.swift in Sources */,
 				4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */,
@@ -301,7 +294,6 @@
 				9F759B1E1F5AB11200879326 /* floorViewController.swift in Sources */,
 				4DAEF2B01EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld in Sources */,
 				4DB579D41EEFE79E0047D90E /* eventDetailViewController.swift in Sources */,
-				9F743F5E1F613870000F4697 /* sideControllingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
