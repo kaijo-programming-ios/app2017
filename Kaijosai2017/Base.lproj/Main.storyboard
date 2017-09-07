@@ -249,7 +249,7 @@
         <!--場所から検索-->
         <scene sceneID="sMx-Ea-Iw3">
             <objects>
-                <viewController title="場所から検索" id="42H-Oe-R3c" sceneMemberID="viewController">
+                <viewController title="場所から検索" id="42H-Oe-R3c" customClass="sideBarViewController" customModule="Kaijosai2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i5u-hB-Rub"/>
                         <viewControllerLayoutGuide type="bottom" id="oHk-11-CdU"/>
@@ -502,7 +502,6 @@
                             <constraint firstItem="gdf-7L-VB7" firstAttribute="leading" secondItem="vj6-hx-TD6" secondAttribute="leadingMargin" id="v74-cS-eHr"/>
                             <constraint firstItem="FCL-ua-TLY" firstAttribute="top" secondItem="9KH-JX-cz0" secondAttribute="bottom" id="vG2-sH-PdH"/>
                             <constraint firstItem="K5l-pM-MHy" firstAttribute="leading" secondItem="AuR-n1-a7A" secondAttribute="trailing" id="wBX-AB-R37"/>
-                            <constraint firstItem="bKW-S2-kr4" firstAttribute="top" secondItem="vj6-hx-TD6" secondAttribute="top" constant="64" id="x1B-yh-FIh"/>
                             <constraint firstItem="KQb-h6-Pgd" firstAttribute="leading" secondItem="zzY-ZY-x0r" secondAttribute="trailing" id="xTK-d0-STP"/>
                             <constraint firstItem="tYL-Xg-fF0" firstAttribute="width" secondItem="bKW-S2-kr4" secondAttribute="width" multiplier="0.4" id="yPF-5B-DsT"/>
                             <constraint firstItem="Ci8-uU-qjs" firstAttribute="centerY" secondItem="vj6-hx-TD6" secondAttribute="centerY" id="yZw-S0-BmP"/>
@@ -515,7 +514,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="場所から検索" id="f84-1J-1pM">
-                        <barButtonItem key="rightBarButtonItem" image="naviMenu" id="XJd-lF-dcN"/>
+                        <barButtonItem key="rightBarButtonItem" image="naviMenu" id="XJd-lF-dcN">
+                            <connections>
+                                <action selector="buttonSearchMap:" destination="42H-Oe-R3c" id="hbo-5t-t52"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xG-Ok-JWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,6 +638,88 @@
             </objects>
             <point key="canvasLocation" x="5396" y="162"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qWR-lp-792">
+            <objects>
+                <navigationController id="lBu-a3-sFd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="etN-4s-CCk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="14r-rL-GSz" kind="relationship" relationship="rootViewController" id="Nzg-Xa-gl1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="izi-hE-n8z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1505" y="-940"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Krz-7k-CCm">
+            <objects>
+                <navigationController id="dmB-uA-aCM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pP0-pG-gxs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="rBW-Fk-jJy" kind="relationship" relationship="rootViewController" id="MgZ-fr-esa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFD-CJ-R9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137" y="-940"/>
+        </scene>
+        <!--クレジット-->
+        <scene sceneID="9rm-mP-xvz">
+            <objects>
+                <viewController title="クレジット" id="rBW-Fk-jJy" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oRH-GA-AQ7"/>
+                        <viewControllerLayoutGuide type="bottom" id="For-To-aJd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eiE-BX-1BI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海城祭公式アプリ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKJ-3L-U7p">
+                                <rect key="frame" x="26" y="89" width="323" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="a7q-Xx-qAZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LyF-Kf-Pzq">
+                                <rect key="frame" x="15" y="179" width="345" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="cTT-9c-njK"/>
+                                </constraints>
+                                <string key="text">制作：文化祭実行委員　プログラム部
+高１　大沼
+中３　高橋</string>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LyF-Kf-Pzq" firstAttribute="leading" secondItem="eiE-BX-1BI" secondAttribute="leading" constant="15" id="3HY-kb-u2T"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SKJ-3L-U7p" secondAttribute="trailing" constant="10" id="Clx-5p-b2q"/>
+                            <constraint firstItem="LyF-Kf-Pzq" firstAttribute="top" secondItem="SKJ-3L-U7p" secondAttribute="bottom" constant="30" id="cps-vK-N2c"/>
+                            <constraint firstAttribute="trailing" secondItem="LyF-Kf-Pzq" secondAttribute="trailing" constant="15" id="fgv-g9-Bom"/>
+                            <constraint firstItem="SKJ-3L-U7p" firstAttribute="top" secondItem="oRH-GA-AQ7" secondAttribute="bottom" constant="25" id="o8y-q1-9oI"/>
+                            <constraint firstItem="SKJ-3L-U7p" firstAttribute="leading" secondItem="eiE-BX-1BI" secondAttribute="leadingMargin" constant="10" id="qrU-E9-7Lb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="4c9-vj-6OS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c4V-U1-dMh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="-940"/>
+        </scene>
         <!--ブックマーク一覧-->
         <scene sceneID="QN8-q5-8Ud">
             <objects>
@@ -747,7 +832,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="キーワードから検索" id="mi3-GY-25b">
-                        <barButtonItem key="rightBarButtonItem" image="naviMenu" id="jiQ-98-Abq"/>
+                        <barButtonItem key="rightBarButtonItem" image="naviMenu" id="jiQ-98-Abq">
+                            <connections>
+                                <action selector="buttonSearchWord:" destination="bWF-9v-YJg" id="04m-o6-oVH"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="XFo-fG-y6Q" id="lDI-WR-fTk"/>
@@ -833,7 +922,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="説明文あああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mlP-pj-qKd">
-                                <rect key="frame" x="16" y="407" width="343" height="206"/>
+                                <rect key="frame" x="16" y="407" width="343" height="255"/>
                                 <color key="backgroundColor" red="0.87204318579999995" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -950,7 +1039,7 @@
         <!--タイムテーブル-->
         <scene sceneID="lfJ-8c-bxR">
             <objects>
-                <viewController title="タイムテーブル" id="NqV-hL-1EO" sceneMemberID="viewController">
+                <viewController title="タイムテーブル" id="NqV-hL-1EO" customClass="sideBarViewController" customModule="Kaijosai2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UgB-FS-hUM"/>
                         <viewControllerLayoutGuide type="bottom" id="xr1-R6-cuk"/>
@@ -1271,17 +1360,56 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="タイムテーブル" id="4jm-lG-uOy">
-                        <barButtonItem key="rightBarButtonItem" image="naviMenu" id="WO1-pr-kK0"/>
+                        <barButtonItem key="rightBarButtonItem" image="naviMenu" id="WO1-pr-kK0">
+                            <connections>
+                                <action selector="buttonTable:" destination="NqV-hL-1EO" id="Zud-8u-ms0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1j-Df-VcK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="868" y="1961"/>
         </scene>
+        <!--リンク-->
+        <scene sceneID="SCt-Jl-4X7">
+            <objects>
+                <viewController title="リンク" id="14r-rL-GSz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pXN-wF-pjo"/>
+                        <viewControllerLayoutGuide type="bottom" id="5bN-ec-fbG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b0h-CA-tMz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nQj-Mj-KB3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cff-fy-F5Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-743" y="-940"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="51R-Xd-nsa">
+            <objects>
+                <navigationController id="mSM-jc-LAN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SJJ-Vw-4ds">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5z6-ZB-F2k" kind="relationship" relationship="rootViewController" id="RgD-NZ-EHq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="riT-EP-yE4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-742" y="95"/>
+        </scene>
         <!--サイドバー-->
         <scene sceneID="aU8-mx-Gox">
             <objects>
-                <viewController storyboardIdentifier="sideBar" title="サイドバー" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5z6-ZB-F2k" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="sideBar" title="サイドバー" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5z6-ZB-F2k" customClass="sideControllingViewController" customModule="Kaijosai2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="t7a-92-06H"/>
                         <viewControllerLayoutGuide type="bottom" id="roH-Fn-ALg"/>
@@ -1291,21 +1419,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UrN-gq-YtN" userLabel="falseViewWidth">
-                                <rect key="frame" x="16" y="20" width="343" height="1"/>
+                                <rect key="frame" x="16" y="64" width="343" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Nib-7n-ZFg"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8OA-MX-x87" userLabel="falseViewHeight">
-                                <rect key="frame" x="16" y="21" width="1" height="646"/>
+                                <rect key="frame" x="16" y="65" width="1" height="602"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="1" id="r78-oV-enB"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qfd-Ft-0LJ">
-                                <rect key="frame" x="187.5" y="21" width="171.5" height="646"/>
+                                <rect key="frame" x="187.5" y="65" width="171.5" height="602"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メニュー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVf-Gg-kar">
                                         <rect key="frame" x="5" y="75" width="161.5" height="40"/>
@@ -1317,7 +1445,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="UiW-3G-fgk">
-                                        <rect key="frame" x="5" y="135" width="161.5" height="400"/>
+                                        <rect key="frame" x="5" y="135" width="161.5" height="450"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyW-Fv-EOy">
                                                 <rect key="frame" x="0.0" y="0.0" width="161.5" height="44"/>
@@ -1325,63 +1453,84 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="ホーム"/>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" id="gnO-Z0-xzK"/>
+                                                    <action selector="goHome:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="y7t-r4-b8r"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-ho-B9P">
-                                                <rect key="frame" x="0.0" y="51" width="161.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="51" width="161.5" height="43.5"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="企画検索"/>
                                                 <connections>
-                                                    <segue destination="58U-OQ-a2K" kind="show" id="qDg-7s-HhV"/>
+                                                    <action selector="goSearch:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="tvd-bc-1vg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngU-kP-TWK">
-                                                <rect key="frame" x="0.0" y="102" width="161.5" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="101.5" width="161.5" height="44"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="周辺地図"/>
+                                                <connections>
+                                                    <action selector="goMap:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="mso-Pe-FTB"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nVy-3a-I6r">
-                                                <rect key="frame" x="0.0" y="152.5" width="161.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="152.5" width="161.5" height="43.5"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="食品・商品"/>
+                                                <connections>
+                                                    <action selector="goShop:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="MR6-y9-o4J"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60w-zp-k0A">
-                                                <rect key="frame" x="0.0" y="203.5" width="161.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="203" width="161.5" height="44"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                 <state key="normal" title="ブックマーク"/>
                                                 <connections>
-                                                    <segue destination="wbH-oc-9fZ" kind="show" id="hvg-l8-C16"/>
+                                                    <action selector="goBook:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="XUs-CR-8sh"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW6-6m-XTB">
-                                                <rect key="frame" x="0.0" y="254.5" width="161.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="254" width="161.5" height="43.5"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <state key="normal" title="タイムテーブル"/>
                                                 <connections>
-                                                    <segue destination="NqV-hL-1EO" kind="show" id="HAQ-nf-bHM"/>
+                                                    <action selector="goTable:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="5EF-CY-7ym"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFU-gC-SUu">
-                                                <rect key="frame" x="0.0" y="305.5" width="161.5" height="43.5"/>
+                                                <rect key="frame" x="0.0" y="304.5" width="161.5" height="44"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="リンク"/>
+                                                <connections>
+                                                    <action selector="goLink:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="eKM-AN-L8c"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m0k-EV-XGL">
-                                                <rect key="frame" x="0.0" y="356" width="161.5" height="44"/>
+                                                <rect key="frame" x="0.0" y="355.5" width="161.5" height="43.5"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="クレジット"/>
+                                                <connections>
+                                                    <action selector="goCredit:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="jfD-sP-48Q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkG-al-d2u">
+                                                <rect key="frame" x="0.0" y="406" width="161.5" height="44"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="設定"/>
+                                                <connections>
+                                                    <action selector="goSetting:" destination="5z6-ZB-F2k" eventType="touchUpInside" id="PES-lU-IGK"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="400" id="FAx-44-GRq"/>
+                                            <constraint firstAttribute="height" constant="450" id="FAx-44-GRq"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -1410,6 +1559,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="UrN-gq-YtN" secondAttribute="trailing" id="vwh-m3-eyx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VeA-2G-uBb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mrF-lG-AL9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3338,11 +3488,8 @@
         <image name="timetable" width="1500" height="1052"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qDg-7s-HhV"/>
-        <segue reference="gnO-Z0-xzK"/>
-        <segue reference="HAQ-nf-bHM"/>
-        <segue reference="hvg-l8-C16"/>
-        <segue reference="a4L-4Q-f0i"/>
+        <segue reference="NFa-m8-1IP"/>
         <segue reference="wYl-n9-vt8"/>
+        <segue reference="nXA-BS-y7H"/>
     </inferredMetricsTieBreakers>
 </document>

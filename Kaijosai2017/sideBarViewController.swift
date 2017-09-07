@@ -63,6 +63,33 @@ class sideBarViewController: UIViewController {
         }
     }
     
+    @IBAction func buttonTable(_ sender: Any) {
+        //  サイドメニューが表示されていない時
+        if isDisplayedSideMenu == false {
+            //  サイドメニューを出す
+            displaySideMenu()
+        }
+            //  サイドメニューが表示されている時
+        else {
+            //  サイドメニューを閉じる
+            closeSideMenu()
+        }
+    }
+    
+    @IBAction func buttonSearchMap(_ sender: Any) {
+        //  サイドメニューが表示されていない時
+        if isDisplayedSideMenu == false {
+            //  サイドメニューを出す
+            displaySideMenu()
+        }
+            //  サイドメニューが表示されている時
+        else {
+            //  サイドメニューを閉じる
+            closeSideMenu()
+        }
+    }
+    
+    
     
     /*
      *  メソッド
@@ -121,4 +148,7 @@ class sideBarViewController: UIViewController {
         //　サイドメニューを非表示
         sideMenuVC.view.isHidden = true
     }
+    
+    
+    
 }
