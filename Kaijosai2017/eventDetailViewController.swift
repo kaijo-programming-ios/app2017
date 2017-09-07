@@ -160,10 +160,6 @@ class eventDetailViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
-    override func didReceiveMemoryWarning()
-    {
-    
-    
     //　以下、サイドバーの設定
     
     

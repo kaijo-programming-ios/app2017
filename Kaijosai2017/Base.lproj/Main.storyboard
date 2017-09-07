@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LF4-QZ-tIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2325.5999999999999" y="-242.42878560719643"/>
+            <point key="canvasLocation" x="1876" y="-869"/>
         </scene>
         <!--企画検索-->
         <scene sceneID="WUW-Dr-Iqm">
@@ -180,14 +180,15 @@
                                     <segue destination="42H-Oe-R3c" kind="show" id="Psf-GO-Ql2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcR-X4-L4b">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FcR-X4-L4b">
                                 <rect key="frame" x="21" y="269" width="333" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.79224297050000003" green="1" blue="0.97428295610000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="CPd-6X-3vN"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="カテゴリーから探す"/>
+                                <connections>
+                                    <segue destination="UhF-pX-KEA" kind="show" id="GIU-Xc-AoP"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3533,7 +3534,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="NFa-m8-1IP"/>
-        <segue reference="BlQ-mM-ouf"/>
         <segue reference="wYl-n9-vt8"/>
         <segue reference="nXA-BS-y7H"/>
     </inferredMetricsTieBreakers>
