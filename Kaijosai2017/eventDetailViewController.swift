@@ -10,6 +10,16 @@ import UIKit
 
 class eventDetailViewController: UIViewController {
     
+    //　以下、サイドバーの設定
+    //  サイドメニューが表示中かの真偽
+    var isDisplayedSideMenu: Bool = false
+    
+    //  スクリーンサイズを格納するための変数
+    var screenWidth: CGFloat = 0
+    
+    //  storyboard上のサイドメニュー(UIViewController)を格納するためのもの
+    var sideMenuVC: UIViewController!
+    //　以上、サイドバーの設定
     
     @IBOutlet weak var bookEnable: UIButton!
     @IBOutlet weak var eventName: UILabel!
@@ -33,6 +43,17 @@ class eventDetailViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        //　以下、サイドバーの設定
+        //  スクリーンの幅を取得して、変数に格納
+        screenWidth = getScreenSize().0
+        
+        //  メインビューにサイドメニューを追加
+        addSideMenu()
+        
+        //　サイドメニューを非表示
+        sideMenuVC.view.isHidden = true
+        //　以上、サイドバーの設定
         
         // CSV ファイル読み込み
         do
@@ -141,6 +162,85 @@ class eventDetailViewController: UIViewController {
     
     override func didReceiveMemoryWarning()
     {
+    
+    
+    //　以下、サイドバーの設定
+    
+    
+    @IBAction func buttonDetail(_ sender: Any) {
+        //  サイドメニューが表示されていない時
+        if isDisplayedSideMenu == false {
+            //  サイドメニューを出す
+            displaySideMenu()
+        }
+            //  サイドメニューが表示されている時
+        else {
+            //  サイドメニューを閉じる
+            closeSideMenu()
+        }
+    }
+    
+    /*
+     *  メソッド
+     */
+    // スクリーンのサイズを取得するためのメソッド
+    func getScreenSize() -> (CGFloat, CGFloat) {
+        
+        //  スクリーンサイズを取得
+        let screenSize = UIScreen.main.bounds.size
+        
+        //  スクリーンの幅と高さを変数に格納
+        let width: CGFloat = screenSize.width
+        let height: CGFloat = screenSize.height
+        
+        return (width, height)
+    }
+    
+    //  サイドメニューをメインビューに追加するためのメソッド
+    func addSideMenu() {
+        
+        //  サイドメニューをメインビューに追加
+        sideMenuVC = (storyboard?.instantiateViewController(withIdentifier: "sideBar"))! as UIViewController
+        self.addChildViewController(sideMenuVC)
+        self.view.addSubview(sideMenuVC.view)
+        sideMenuVC.didMove(toParentViewController: self)
+        
+        //  画面外に追加したサイドメニューを移動
+        sideMenuVC.view.transform = CGAffineTransform(translationX: (screenWidth * -1), y: 0)
+    }
+    
+    //  サイドメニューをメインビューに出すためのメソッド
+    func displaySideMenu() {
+        
+        //　サイドメニューを表示
+        sideMenuVC.view.isHidden = false
+        //  サイドメニューをアニメーション付きで移動させる
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
+            self.sideMenuVC.view.transform = CGAffineTransform(translationX: (self.screenWidth * -1/2), y: 0)
+        })
+        
+        //  サイドメニューが表示されていることにする
+        isDisplayedSideMenu = true
+    }
+    
+    //  サイドメニューを格納するためのメソッド
+    func closeSideMenu() {
+        
+        //  サイドメニューをアニメーション付きで移動させる
+        UIView.animate(withDuration: 0.2, animations: { () -> Void in
+            self.sideMenuVC.view.transform = CGAffineTransform(translationX: (self.screenWidth * -1), y: 0)
+        })
+        
+        //  サイドメニューが表示されていることにする
+        isDisplayedSideMenu = false
+        
+        //　サイドメニューを非表示
+        sideMenuVC.view.isHidden = true
+    }
+    //以上、サイドバーの設定
+    
+    
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
