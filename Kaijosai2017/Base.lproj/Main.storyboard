@@ -112,7 +112,7 @@
         <!--カテゴリー別リスト-->
         <scene sceneID="IzJ-up-n0H">
             <objects>
-                <viewController storyboardIdentifier="categoryListViewController" title="カテゴリー別リスト" id="UhF-pX-KEA" customClass="categoryList" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="categoryListViewController" title="カテゴリー別リスト" id="UhF-pX-KEA" customClass="categoryListViewController" customModule="Kaijosai2017" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dqs-MR-DRR"/>
                         <viewControllerLayoutGuide type="bottom" id="j3w-49-3zd"/>
@@ -126,7 +126,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" id="N9O-Vd-3qP">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="categoryListCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" id="N9O-Vd-3qP">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N9O-Vd-3qP" id="rIu-MR-cPH">

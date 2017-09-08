@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0118E7861F6180A90053BC14 /* categoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0118E7851F6180A90053BC14 /* categoryListViewController.swift */; };
+		01EF276B1F62CBC400F68F77 /* categoryList.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01EF276A1F62CBC400F68F77 /* categoryList.csv */; };
+		01EF276D1F62CBCC00F68F77 /* categoryData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01EF276C1F62CBCC00F68F77 /* categoryData.csv */; };
 		4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5718721EE97013003B95D4 /* SeResultViewController.swift */; };
 		4D83B5871EEE95540063D1E3 /* eventData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4D83B5861EEE95540063D1E3 /* eventData.csv */; };
 		4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */; };
@@ -46,12 +48,14 @@
 
 /* Begin PBXFileReference section */
 		0118E7851F6180A90053BC14 /* categoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryListViewController.swift; sourceTree = "<group>"; };
+		01EF276A1F62CBC400F68F77 /* categoryList.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = categoryList.csv; sourceTree = "<group>"; };
+		01EF276C1F62CBCC00F68F77 /* categoryData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = categoryData.csv; sourceTree = "<group>"; };
 		4D5718721EE97013003B95D4 /* SeResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeResultViewController.swift; sourceTree = "<group>"; };
 		4D83B5861EEE95540063D1E3 /* eventData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eventData.csv; sourceTree = "<group>"; };
 		4DAEF2A41EE6CA7B00AC9187 /* Kaijosai2017.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kaijosai2017.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DAEF2A91EE6CA7B00AC9187 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4DAEF2AC1EE6CA7B00AC9187 /* Base */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4DAEF2AC1EE6CA7B00AC9187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4DAEF2AF1EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Kaijosai2017.xcdatamodel; sourceTree = "<group>"; };
 		4DAEF2B41EE6CA7B00AC9187 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4DAEF2B61EE6CA7B00AC9187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			children = (
 				4D83B5861EEE95540063D1E3 /* eventData.csv */,
 				9F1035CA1F30378100C16E32 /* bookmarks.csv */,
+				01EF276A1F62CBC400F68F77 /* categoryList.csv */,
+				01EF276C1F62CBCC00F68F77 /* categoryData.csv */,
 				4DAEF2E01EE6D33E00AC9187 /* Images.xcassets */,
 				4DAEF2A61EE6CA7B00AC9187 /* Kaijosai2017 */,
 				4DAEF2BE1EE6CA7B00AC9187 /* Kaijosai2017Tests */,
@@ -266,7 +272,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01EF276B1F62CBC400F68F77 /* categoryList.csv in Resources */,
 				4DAEF2B51EE6CA7B00AC9187 /* LaunchScreen.storyboard in Resources */,
+				01EF276D1F62CBCC00F68F77 /* categoryData.csv in Resources */,
 				4DAEF2E11EE6D33E00AC9187 /* Images.xcassets in Resources */,
 				4DAEF2AD1EE6CA7B00AC9187 /* Main.storyboard in Resources */,
 				9F1035CB1F30378100C16E32 /* bookmarks.csv in Resources */,

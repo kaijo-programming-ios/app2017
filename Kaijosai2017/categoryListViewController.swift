@@ -13,13 +13,15 @@ class categoryListViewController: UIViewController {
     // 変数宣言
     var originEvent = [""]              // 全データ（企画名）
     var originOrgan = [""]              // 全データ（団体名）
+    var categoryList = [""]             // カテゴリー一覧
     var dataList:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // CSV ファイル読み込み
-        do {
+        do
+        {
             // CSV ファイルのパス名を取得
             let csvPath = Bundle.main.path(forResource: "eventData", ofType: "csv")
             
@@ -29,9 +31,8 @@ class categoryListViewController: UIViewController {
             // 改行区切りでデータを分割し、配列に格納
             dataList = csvData.components(separatedBy: "\n")
             dataList.removeLast()
-        } catch {
-            print(error)
         }
+        catch  { print(error) }
         
         // カンマ区切りでデータを分裂し、配列に格納
         var index = 0;
@@ -45,8 +46,26 @@ class categoryListViewController: UIViewController {
         
         originEvent.removeLast()
         originOrgan.removeLast()
+        
+        // カテゴリー一覧 初期化
+        dataList.removeAll()
+        do
+        {
+            // CSV ファイルのパス名を取得
+            let csvPath = Bundle.main.path(forResource: "categoryList", ofType: "csv")
+            
+            // CSV ファイルのデータを取得
+            let csvData = try String(contentsOfFile: csvPath!, encoding: String.Encoding.utf8)
+            
+            // 改行区切りでデータを分割し、配列に格納
+            dataList = csvData.components(separatedBy: "\n")
+            dataList.removeLast()
+        }
+        catch { print(error) }
+        let dataDetail = dataList[0].components(separatedBy: ",")
+        for i in dataDetail  { categoryList.insert(i, at: categoryList.endIndex - 1) }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
