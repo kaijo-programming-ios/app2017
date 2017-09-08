@@ -132,10 +132,10 @@
 				9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */,
 				4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */,
 				4D5718721EE97013003B95D4 /* SeResultViewController.swift */,
+				0118E7851F6180A90053BC14 /* categoryListViewController.swift */,
 				4DAEF2B31EE6CA7B00AC9187 /* LaunchScreen.storyboard */,
 				4DAEF2B61EE6CA7B00AC9187 /* Info.plist */,
 				4DAEF2AE1EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld */,
-				0118E7851F6180A90053BC14 /* categoryListViewController.swift */,
 			);
 			path = Kaijosai2017;
 			sourceTree = "<group>";
@@ -449,7 +449,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

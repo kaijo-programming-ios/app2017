@@ -10,10 +10,41 @@ import UIKit
 
 class categoryListViewController: UIViewController {
 
+    // 変数宣言
+    var originEvent = [""]              // 全データ（企画名）
+    var originOrgan = [""]              // 全データ（団体名）
+    var dataList:[String] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // CSV ファイル読み込み
+        do {
+            // CSV ファイルのパス名を取得
+            let csvPath = Bundle.main.path(forResource: "eventData", ofType: "csv")
+            
+            // CSV ファイルのデータを取得
+            let csvData = try String(contentsOfFile: csvPath!, encoding: String.Encoding.utf8)
+            
+            // 改行区切りでデータを分割し、配列に格納
+            dataList = csvData.components(separatedBy: "\n")
+            dataList.removeLast()
+        } catch {
+            print(error)
+        }
+        
+        // カンマ区切りでデータを分裂し、配列に格納
+        var index = 0;
+        while index < dataList.count
+        {
+            let dataDetail = dataList[index].components(separatedBy: ",")
+            originEvent.insert(dataDetail[2], at: index);
+            originOrgan.insert(dataDetail[1], at: index);
+            index += 1
+        }
+        
+        originEvent.removeLast()
+        originOrgan.removeLast()
     }
 
     override func didReceiveMemoryWarning() {
