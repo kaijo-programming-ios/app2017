@@ -16,27 +16,60 @@ class sideControllingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-    
+
     @IBAction func goHome(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
     }
     @IBAction func goSearch(_ sender: Any) {
+        performSegue(withIdentifier: "goHome", sender: nil)
+        let history = self.navigationController?.viewControllers
+        let newHistory = history?.last
+        if let okHistory = newHistory {
+            print(okHistory)
+            self.navigationController?.setViewControllers([okHistory], animated: false)
+        }
+        self.performSegue(withIdentifier: "goSearch", sender: nil)
     }
     @IBAction func goMap(_ sender: Any) {
-    }
-    @IBAction func goShop(_ sender: Any) {
+        performSegue(withIdentifier: "goHome", sender: nil)
+        let history = self.navigationController?.viewControllers
+        let newHistory = history?.last
+        if let okHistory = newHistory {
+            print(okHistory)
+            self.navigationController?.setViewControllers([okHistory], animated: false)
+        }
+        self.performSegue(withIdentifier: "goMap", sender: nil)
     }
     @IBAction func goBook(_ sender: Any) {
+        performSegue(withIdentifier: "goHome", sender: nil)
+        let history = self.navigationController?.viewControllers
+        let newHistory = history?.last
+        if let okHistory = newHistory {
+            print(okHistory)
+            self.navigationController?.setViewControllers([okHistory], animated: false)
+        }
+        self.performSegue(withIdentifier: "goBook", sender: nil)
     }
-    @IBAction func goTable(_ sender: Any) {
-    }
-    @IBAction func goLink(_ sender: Any) {
+    @IBAction func goTime(_ sender: Any) {
+        performSegue(withIdentifier: "goHome", sender: nil)
+        let history = self.navigationController?.viewControllers
+        let newHistory = history?.last
+        if let okHistory = newHistory {
+            print(okHistory)
+            self.navigationController?.setViewControllers([okHistory], animated: false)
+        }
+        self.performSegue(withIdentifier: "goTime", sender: nil)
     }
     @IBAction func goCredit(_ sender: Any) {
+        performSegue(withIdentifier: "goHome", sender: nil)
+        let history = self.navigationController?.viewControllers
+        let newHistory = history?.last
+        if let okHistory = newHistory {
+            print(okHistory)
+            self.navigationController?.setViewControllers([okHistory], animated: false)
+        }
+        self.performSegue(withIdentifier: "goCredit", sender: nil)
     }
-    @IBAction func goSetting(_ sender: Any) {
-    }
-    
-    
     
     
     

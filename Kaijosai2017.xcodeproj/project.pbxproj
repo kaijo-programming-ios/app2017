@@ -21,6 +21,7 @@
 		9F1C52E71F603D2700C0CF1F /* sideBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1C52E61F603D2700C0CF1F /* sideBarViewController.swift */; };
 		9F1DE0D31F2F04F20073C3D5 /* bookmarkTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1DE0D21F2F04F20073C3D5 /* bookmarkTableViewController.swift */; };
 		9F38C5531F45962A00F36B45 /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */; };
+		9F7130F41F62D1F400B46C8E /* sideControllingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7130F31F62D1F400B46C8E /* sideControllingViewController.swift */; };
 		9F759B1E1F5AB11200879326 /* floorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F759B1D1F5AB11200879326 /* floorViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		9F1C52E61F603D2700C0CF1F /* sideBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideBarViewController.swift; sourceTree = "<group>"; };
 		9F1DE0D21F2F04F20073C3D5 /* bookmarkTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bookmarkTableViewController.swift; sourceTree = "<group>"; };
 		9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
+		9F7130F31F62D1F400B46C8E /* sideControllingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sideControllingViewController.swift; sourceTree = "<group>"; };
 		9F759B1D1F5AB11200879326 /* floorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = floorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +122,7 @@
 				4DAEF2A71EE6CA7B00AC9187 /* AppDelegate.swift */,
 				4DAEF2AB1EE6CA7B00AC9187 /* Main.storyboard */,
 				9F1C52E61F603D2700C0CF1F /* sideBarViewController.swift */,
+				9F7130F31F62D1F400B46C8E /* sideControllingViewController.swift */,
 				9F759B1D1F5AB11200879326 /* floorViewController.swift */,
 				9F38C5521F45962A00F36B45 /* TimeTableViewController.swift */,
 				4DB579D31EEFE79E0047D90E /* eventDetailViewController.swift */,
@@ -291,6 +294,7 @@
 				9F1C52E71F603D2700C0CF1F /* sideBarViewController.swift in Sources */,
 				4DAEF2A81EE6CA7B00AC9187 /* AppDelegate.swift in Sources */,
 				9F1DE0D31F2F04F20073C3D5 /* bookmarkTableViewController.swift in Sources */,
+				9F7130F41F62D1F400B46C8E /* sideControllingViewController.swift in Sources */,
 				9F759B1E1F5AB11200879326 /* floorViewController.swift in Sources */,
 				4DAEF2B01EE6CA7B00AC9187 /* Kaijosai2017.xcdatamodeld in Sources */,
 				4DB579D41EEFE79E0047D90E /* eventDetailViewController.swift in Sources */,
