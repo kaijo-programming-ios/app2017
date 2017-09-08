@@ -10,10 +10,14 @@ import UIKit
 
 class categoryListViewController: UIViewController {
 
+    
+    @IBOutlet weak var categoryListTable: UITableView!
+    
     // 変数宣言
     var originEvent = [""]              // 全データ（企画名）
     var originOrgan = [""]              // 全データ（団体名）
-    var categoryList = [""]             // カテゴリー一覧
+    var categoryList = [""]             // カテゴリー名一覧
+    var categoryData = [[]]           // 企画一覧
     var dataList:[String] = []
     
     override func viewDidLoad() {
@@ -52,7 +56,7 @@ class categoryListViewController: UIViewController {
         do
         {
             // CSV ファイルのパス名を取得
-            let csvPath = Bundle.main.path(forResource: "categoryList", ofType: "csv")
+            let csvPath = Bundle.main.path(forResource: "categoryData", ofType: "csv")
             
             // CSV ファイルのデータを取得
             let csvData = try String(contentsOfFile: csvPath!, encoding: String.Encoding.utf8)
@@ -64,22 +68,40 @@ class categoryListViewController: UIViewController {
         catch { print(error) }
         let dataDetail = dataList[0].components(separatedBy: ",")
         for i in dataDetail  { categoryList.insert(i, at: categoryList.endIndex - 1) }
+        for i in dataList { categoryData.insert([i], at: categoryData.endIndex - 1) }
+        categoryData.removeLast()
     }
     
-    override func didReceiveMemoryWarning() {
+    // データを返す
+    func tableView(tableView:UITableView, cellForRowAtIndexPath indexPath:NSIndexPath) -> UITableViewCell
+    {
+        let cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: "categoryListCell")
+        cell.textLabel?.text = originEvent[categoryData[indexPath.section][indexPath.row] as! Int]
+        cell.detailTextLabel?.text = originOrgan[categoryData[indexPath.section][indexPath.row] as! Int]
+        cell.accessoryType = .none
+        return cell
+    }
+    
+    // データの個数を返す
+    func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
+    {
+        return categoryData[section].count
+    }
+    
+    // セクション名を返す
+    func tableView(tableView:UITableView, titleForHeaderInSection section:Int) -> String?
+    {
+        return categoryList[section]
+    }
+    
+    // セクションの個数を返す
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int
+    {
+        return categoryList.count
+    }
+    
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

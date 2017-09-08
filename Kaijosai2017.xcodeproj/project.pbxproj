@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0118E7861F6180A90053BC14 /* categoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0118E7851F6180A90053BC14 /* categoryListViewController.swift */; };
-		01EF276B1F62CBC400F68F77 /* categoryList.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01EF276A1F62CBC400F68F77 /* categoryList.csv */; };
 		01EF276D1F62CBCC00F68F77 /* categoryData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 01EF276C1F62CBCC00F68F77 /* categoryData.csv */; };
 		4D5718731EE97013003B95D4 /* SeResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5718721EE97013003B95D4 /* SeResultViewController.swift */; };
 		4D83B5871EEE95540063D1E3 /* eventData.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4D83B5861EEE95540063D1E3 /* eventData.csv */; };
@@ -48,7 +47,6 @@
 
 /* Begin PBXFileReference section */
 		0118E7851F6180A90053BC14 /* categoryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = categoryListViewController.swift; sourceTree = "<group>"; };
-		01EF276A1F62CBC400F68F77 /* categoryList.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = categoryList.csv; sourceTree = "<group>"; };
 		01EF276C1F62CBCC00F68F77 /* categoryData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = categoryData.csv; sourceTree = "<group>"; };
 		4D5718721EE97013003B95D4 /* SeResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeResultViewController.swift; sourceTree = "<group>"; };
 		4D83B5861EEE95540063D1E3 /* eventData.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = eventData.csv; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 			children = (
 				4D83B5861EEE95540063D1E3 /* eventData.csv */,
 				9F1035CA1F30378100C16E32 /* bookmarks.csv */,
-				01EF276A1F62CBC400F68F77 /* categoryList.csv */,
 				01EF276C1F62CBCC00F68F77 /* categoryData.csv */,
 				4DAEF2E01EE6D33E00AC9187 /* Images.xcassets */,
 				4DAEF2A61EE6CA7B00AC9187 /* Kaijosai2017 */,
@@ -272,7 +269,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01EF276B1F62CBC400F68F77 /* categoryList.csv in Resources */,
 				4DAEF2B51EE6CA7B00AC9187 /* LaunchScreen.storyboard in Resources */,
 				01EF276D1F62CBCC00F68F77 /* categoryData.csv in Resources */,
 				4DAEF2E11EE6D33E00AC9187 /* Images.xcassets in Resources */,
