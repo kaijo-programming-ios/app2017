@@ -21,6 +21,7 @@ class eventDetailViewController: UIViewController {
     var sideMenuVC: UIViewController!
     //　以上、サイドバーの設定
     
+    @IBOutlet weak var circleCut: UIImageView!
     @IBOutlet weak var bookEnable: UIButton!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var organName: UILabel!
@@ -102,6 +103,8 @@ class eventDetailViewController: UIViewController {
             }
         }
         
+        let picName = "i" + String(data[5])
+        circleCut.image = UIImage(named: picName)
         placeCode.text = "場所コード：" + String(data[5]) + "　場所：" + String(data[4])
         eventName.text = data[2]
         organName.text = data[1]
